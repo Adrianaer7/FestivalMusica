@@ -1,0 +1,24 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.header {
+    background-color: v.$verde;
+
+    h1 {
+        color: v.$blanco;
+
+    }
+}
+.navegacion-principal {
+    @include m.telefono {   //llamo al mixin
+        background-color: red;  //gracias al content en el mixin puedo pasarle esta declaracion
+    }
+    a {
+        color: v.$blanco;
+        font-size: 2.4rem;
+
+        &:hover{    //el & añida el a con el :hover pegados, sin esto queda a :hover en app.css
+            color: v.$amarillo;
+        }
+    }
+}

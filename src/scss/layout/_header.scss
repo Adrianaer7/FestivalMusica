@@ -1,24 +1,44 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
 
 .header {
     background-color: v.$verde;
 
     h1 {
         color: v.$blanco;
-
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 2rem;
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
 .navegacion-principal {
-    @include m.telefono {   //llamo al mixin
-        background-color: red;  //gracias al content en el mixin puedo pasarle esta declaracion
+    @include m.tablet {   //llamo al mixin
+        display: flex;  //gracias al content en el mixin puedo pasarle esta declaracion
+        gap: 2rem;
     }
     a {
+        display: block;
+        text-align: center;
         color: v.$blanco;
         font-size: 2.4rem;
+        margin-bottom: 1rem;
 
-        &:hover{    //el & añida el a con el :hover pegados, sin esto queda a :hover en app.css
+        &:hover {    //el & añida el a con el :hover pegados, sin esto queda a :hover en app.css
             color: v.$amarillo;
+        }
+        
+        @include m.tablet {
+            margin-bottom: 0;
         }
     }
 }

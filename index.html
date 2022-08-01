@@ -21,5 +21,33 @@
             </nav>
         </div>
     </header>
+
+    <div class="video">
+        <div class="overlay">
+            <div class="contenedor contenido-video">
+                <h2>Rock & EDM Festival</h2>
+                <p>Julio 2022, Entre Rios, ARG</p>
+            </div>
+        </div>
+        <video autoplay muted loop> <!--autoplay par que inicie la reproduccion al cargar la pagina, inicia muted, sin esa opcion, el navegador no muestra el video, y loop para que no pare su reproduccion al finalizar el video-->
+            <source src="src/video/concierto.mp4" type="video/mp4"> <!--hay que poner mp4 primero porque es el mas compatible. Es la pri-->
+            <source src="src/video/concierto.ogg" type="video/ogg">
+            <source src="src/video/concierto.webm" type="video/webm">
+        </video>
+    </div>
+
+    <section class="contenedor sobre-festival">
+        <div class="imagen">
+            <picture>
+                <source srcset="build/img/imagen_vocalista.avif" type="image/avif">
+                <img src="build/img/imagen_vocalista.jpg" alt="Imagen vocalista">
+            </picture>
+        </div>
+        <div class="contenido-festival">
+            <h2>Rock & EDM Festival</h2>
+            <p class="fecha">Julio 2022, Entre Rios, Argentina</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloremque pariatur itaque ea laboriosam explicabo est tempore? Adipisci iste repudiandae quisquam inventore, illo ex voluptatibus repellendus assumenda eaque. Quo, iusto.</p>
+        </div>
+    </section>
 </body>
 </html>

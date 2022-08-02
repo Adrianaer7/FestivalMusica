@@ -38,6 +38,23 @@ function mostrarImagen(id) {    //tomo la id de la funcion crearGaleria
     const overlay = document.createElement("DIV");  //creo un <div>
     overlay.classList.add("overlay")
     overlay.appendChild(imagen) //le agrego el <picture> al <div>
+    overlay.onclick = function() {  //cierro el modal al hacer click en él
+        const body = document.querySelector("body")
+        body.classList.remove("fijar-body")
+        overlay.remove()
+    }
+
+    const cerrarModal = document.createElement("P")
+    cerrarModal.classList.add("btn-cerrar")
+    cerrarModal.textContent = "X"
+    overlay.appendChild(cerrarModal)
+    cerrarModal.onclick = function() {  //al hacer click en la X cierro el modal
+        const body = document.querySelector("body")
+        body.classList.remove("fijar-body")
+        cerrarModal.remove()
+    }
+
     const body = document.querySelector("body")
     body.appendChild(overlay)   //al final del body agrego el div creado con el onclick
+    body.classList.add("fijar-body")
 }

@@ -12,6 +12,10 @@ html {
 body {
     font-size: 1.6rem;
     font-family: v.$fuente_principal;
+
+    &.fijar-body {  //cuando haga click en una imagen de la galeria, se le asigna esta clase
+        overflow: auto;   //quito el scroll
+    }
 }
 
 .contenedor {

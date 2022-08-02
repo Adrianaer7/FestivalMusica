@@ -51,15 +51,24 @@ function versionAvif(done) {
     done()
 }
 
-//por cada cambio que se realice en sass, recarga
+//Los scripts que cree en src/js los envio al build para que estén en el deployment cuando suba la carpeta build
+function javascript(done) {
+    src("src/js/**/*.js")
+        .pipe(dest("build/js"))
+    done()
+}
+
+//por cada cambio que se realice en sass o en el build/js, recarga
 function dev(done) {
-    watch("src/scss/**/*.scss", css) 
+    watch("src/scss/**/*.scss", css)
+    watch("src/js/**/*.js", javascript) 
     done()
 }
 
 //exporto las funciones para hacerlas disponibles en package.json
 exports.css = css;
+exports.js = javascript;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif
-exports.dev = parallel(imagenes, versionWebp, versionAvif, dev);   //gulp parallel hace que se ejecuten a la vez estas 2 funciones
+exports.dev = parallel(imagenes, versionWebp, versionAvif, javascript, dev);   //gulp parallel hace que se ejecuten a la vez estas 2 funciones

@@ -1,14 +1,14 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.sobre-festival {
+.sobre-festival {   //section
     padding: 5rem 0;
     @include m.tablet {
         @include m.grid(2, 5rem)
     }
 }
 
-.contenido-festival {
+.contenido-festival {   //div
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
     h2 {
         margin-bottom: 2rem;
     }
-    .fecha {
+    .fecha {    //p
         color: v.$rosa;
         font-weight: bold;
     }

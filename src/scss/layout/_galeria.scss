@@ -1,7 +1,7 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.galeria {
+.galeria {//section
     padding: 5rem 0;
     
     h3 {
@@ -9,7 +9,7 @@
     }
 }
 
-.galeria-imagenes {
+.galeria-imagenes { //ul
     @include m.resetear-lista;
     @include m.grid(2, 2rem);
     @include m.telefono {
@@ -26,9 +26,9 @@
     }
 }
 
-.overlay {  /*div creado desde el app.js*/
+.overlay {  //div creado desde el app.js
     position: fixed;
-    top: 0;
+    top: 0; //con todo esto centro el div
     left: 0;
     right: 0;
     bottom: 0;
@@ -46,7 +46,7 @@
     }
 }
 
-.btn-cerrar {
+.btn-cerrar {   //<p> creado en js
     width: 4rem;
     height: 4rem;
     border-radius: 50%;

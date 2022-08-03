@@ -1,9 +1,42 @@
+//Cuando cargue el html, ejecuta la funcion
 document.addEventListener("DOMContentLoaded", function () {
     iniciarApp()
 })
 
 function iniciarApp() {
     crearGaleria()
+    scrollNav()
+    navegacionFija()
+}
+
+//efecto scroll
+function scrollNav() {
+    const enlaces = document.querySelectorAll(".navegacion-principal a")
+    enlaces.forEach(enlace => {
+        enlace.addEventListener("click", function(e) {
+            e.preventDefault()  //evito que me muestre la url en la barra de direcciones
+            const seccionScroll = e.target.attributes.href.value
+            const seccion = document.querySelector(seccionScroll)   //selecciono el elemento con id igual al seccionScroll
+            seccion.scrollIntoView({behavior: "smooth"})    //le doy la animacion
+        })
+    })
+}
+
+function navegacionFija() {
+    const barra = document.querySelector(".header")
+    const sobreFestival = document.querySelector(".sobre-festival") //section
+    const body = document.querySelector("body")
+
+    window.addEventListener("scroll", function() {  //cuando se haga scroll
+        if(sobreFestival.getBoundingClientRect().top < 0) { //cuando la parte superior de la pantalla toque la parte superior del section 
+            barra.classList.add("fijo")
+            body.classList.add("body-scroll")
+        } else {
+            barra.classList.remove("fijo")
+            body.classList.remove("body-scroll")
+
+        }
+    })
 }
 
 function crearGaleria() {
@@ -18,11 +51,11 @@ function crearGaleria() {
             <source srcset="build/img/thumb/${i}.webp" type="image/webp">
             <img src="build/img/thumb/${i}.jpg" loading="lazy" width="200" height="300" alt="Imagen galería">
         `
+        galeria.appendChild(imagen) //agrego el <picture> a la <ul> y la muestro en pantalla
+        
         imagen.onclick = function() {
             mostrarImagen(i)
         }
-
-        galeria.appendChild(imagen) //agrego el <picture> a la <ul> y la muestro en pantalla
     }
 }
 

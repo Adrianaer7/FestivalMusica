@@ -1,7 +1,7 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.lineup {
+.lineup {   //section
     background-color: v.$rosa;
     padding: 5rem 0;
 
@@ -10,13 +10,13 @@
         color: v.$blanco;
     }
 
-    .dia {
+    .dia {  //p
         text-transform: uppercase;
         margin-bottom: 5rem 0;
     }
 }
 
-.escenarios-contenedor {
+.escenarios-contenedor {    //div
     @include m.tablet {
         @include m.grid(2, 1rem)
     }
@@ -26,11 +26,11 @@
     }
 }
 
-.escenario {
+.escenario {    //div
     padding-top: 2rem;
 
-    .nombre-escenario { /*defino las propiedades globales para la imagen que voy a poner*/
-        &::after {
+    .nombre-escenario { // <p> - Defino las propiedades globales para la imagen que voy a poner
+        &::after {  //despues del <p>
             content: "";
             display: block;
             width: 20rem;
@@ -62,7 +62,7 @@
     }
 }
 
-.calendario {
+.calendario {   //ul
     @include m.resetear-lista;  //quito estilos por default a la lista
 
     li {

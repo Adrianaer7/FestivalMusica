@@ -16,6 +16,10 @@ body {
     &.fijar-body {  //cuando haga click en una imagen de la galeria, se le asigna esta clase
         overflow: auto;   //quito el scroll
     }
+
+    &.body-scroll {//cuando haga scroll corre el body 86px hacia abajo(lo que mide el <header>)
+       padding-top: 8.6rem; 
+    }
 }
 
 .contenedor {

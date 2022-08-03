@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 
-.header {
+.header {   //header
     background-color: v.$verde;
 
     h1 {
@@ -12,7 +12,7 @@
             margin: 0;
         }
     }
-    .contenido-header {
+    .contenido-header { //div
         padding: 2rem;
         @include m.tablet {
             display: flex;
@@ -20,8 +20,18 @@
             align-items: center;
         }
     }
+
+    @include m.tablet { //dejo la barra de navegacion anclada arriba y a la izquierda al hacer scroll
+        &.fijo {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333; //.1rem(corre la sombra de izquierda a derecha con valores positivos, al reves con negativos) .2rem(altura de la sombra) .3rem(difuminacion de la sombra)
+        }
+    }
 }
-.navegacion-principal {
+.navegacion-principal { //nav
     @include m.tablet {   //llamo al mixin
         display: flex;  //gracias al content en el mixin puedo pasarle esta declaracion
         gap: 2rem;

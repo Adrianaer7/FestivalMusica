@@ -15,6 +15,7 @@
     .contenido-header { //div
         padding: 2rem;
         @include m.tablet {
+            padding: 2rem 1rem; //le achico el padding a los lados para que el <a> no me ocupe 2 lineas
             display: flex;
             justify-content: space-between;
             align-items: center;

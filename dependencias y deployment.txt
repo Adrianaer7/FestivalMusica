@@ -1,0 +1,28 @@
+DEPENDENCIAS 
+npm init
+npm i -D sass
+En package.json
+"scripts": {
+    "sass": "sass src/scss:build/css"   //que ejecute el codigo de sass, identifique el archivo css y lo compile y guarda en build. Watch para que escuche los cambios y compile por cada uno
+  },
+en index.html     <link rel="stylesheet" href="build/css/app.css">
+npm run sass
+npm i -D gulp
+en la carpeta raiz del proyecto crear el archivo gulpfile.js
+npm i -D gulp-ass //conecta gulp con sass
+npm i -D gulp-plumber //para que no se detenga la ejecucion de gulp al escribir mal un bloque css
+npm i -D gulp-webp  //para cambiar el formato de la imagen a webp
+npm i -D gulp-avif  //para cambiar el formato de la imagen a avif
+npm i -D gulp-imagemin@7.1.0  //para aligerar las imagenes. Se instala esta version porque la version 8 no funciona bien
+npm i -D gulp-cache //el proceso de aligerar las imagenes requiere de tenerlas en cache
+npm i -D cssnano  //comprime el archivo .css para que mejore el performance
+npm i -D autoprefixer //mejora el codigo css adaptandolo a todos los navegadores
+npm i -D postcss
+npm i -D gulp-postcss
+npm i -D gulp-sourcemaps //para que el navegador identifique en qué linea y archivo css está el estilo para el elemento seleccionado. No siempre es preciso
+npm i -D gulp-terser-js //comprime el archivo .js para que mejore el performance
+
+DEPLOYMENT
+Crear una carpeta
+en esa carpeta pegar el archivo index.html, y la carpeta build. Crear una carpeta src y pegar la carpeta video adentro
+arrastrar la carpeta a la pagina de netlify
